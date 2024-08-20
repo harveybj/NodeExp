@@ -1,0 +1,27 @@
+[
+  {
+    "username": "Harvey",
+    "roles": { "User": 2001, "Admin": 5150, "Editor": 1984 },
+    "email": "harveybj@yahoo.com",
+    "password": "$2b$10$wh/YLq.Vn3/8/tfj9pNEEOjydrqGLrVsJLW33gy.YS7PD/4/NxMWm"
+  },
+  {
+    "username": "Beth",
+    "roles": { "User": 2001 },
+    "email": "bmaarhus@yahoo.com",
+    "password": "$2b$10$49C/Z4LnWm.efEVfFeYuf.TDiO2QLeqG50hRGLfhPRbwJvBipCXiG"
+  },
+  {
+    "username": "Natasha",
+    "roles": { "User": 2001 },
+    "email": "natasha@yahoo.com",
+    "password": "$2b$10$8urMCSNUqtDik4ugIsYpxO9YxdPKa1cxrhAltR1GT6nlyJsXDrTgu"
+  },
+  {
+    "username": "Natalia",
+    "roles": { "Admin": 5150 },
+    "email": "natalia@yahoo.com",
+    "password": "$2b$10$lFs9q57QhMB1qgW3CjQQ4O3enzs88.ZrAHryIhKu7D4jAd6TegO0O",
+    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ik5hdGFsaWEiLCJpYXQiOjE3MjQxODU3MTAsImV4cCI6MTcyNDI3MjExMH0.YQ95mlbZ6btQMdbagTWUeQUTdxF14Y1Hv3jpSIvXiQY"
+  }
+]

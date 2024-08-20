@@ -1,0 +1,12 @@
+20240818	16:48:54	5ee3ad72-6824-46c3-a43a-f5f5425b1fae	SyntaxError	Expected double-quoted property name in JSON at position 55 (line 4 column 1)	POST	/employees	undefined
+20240819	16:26:08	42c84a79-b610-4c36-ab54-8f85c9a6455d	SyntaxError	Unexpected token 'e', "eyJhbGciOi"... is not valid JSON	GET	/employees	undefined
+20240819	16:37:57	0ca6b356-bc13-4b2e-8360-0a1233180341	SyntaxError	Unexpected non-whitespace character after JSON at position 86 (line 6 column 1)	POST	/register	undefined
+20240819	16:42:47	5e068aa4-fda1-438c-bedd-7ad9327238f4	SyntaxError	Unexpected token 'e', "eyJhbGciOi"... is not valid JSON	GET	/employees	undefined
+20240819	22:14:14	b1cc8c98-c02f-452e-8c8b-d95df454cd4f	TypeError	Cannot convert undefined or null to object	GET	/refresh	undefined
+20240819	22:15:56	526282ac-9d6f-49a3-af1b-6c5b2c9b1c85	TypeError	Cannot convert undefined or null to object	GET	/refresh	undefined
+20240819	22:17:08	295528b9-6ce1-4044-835c-89f8eb096d0f	TypeError	Cannot convert undefined or null to object	GET	/refresh	undefined
+20240819	22:18:37	29bacf1f-7c33-486c-91af-9df0993e486b	TypeError	Cannot convert undefined or null to object	GET	/refresh	undefined
+20240819	22:18:38	aad36801-1603-4974-bc6d-951e01d747ef	TypeError	Cannot convert undefined or null to object	GET	/refresh	undefined
+20240819	22:18:39	63094958-0907-49d7-8c56-128a06a85b86	TypeError	Cannot convert undefined or null to object	GET	/refresh	undefined
+20240819	22:19:55	eaa7ae21-1faf-4398-95f5-93db9f2072ec	TypeError	Cannot convert undefined or null to object	GET	/refresh	undefined
+20240820	13:10:34	59a4c718-e625-4637-8189-697f9675234d	TypeError	Cannot read properties of undefined (reading 'map')	POST	/employees	undefined
