@@ -7,7 +7,6 @@ const userDB = {
 };
 
 const jwt = require("jsonwebtoken");
-require("dotenv").config();
 
 //handle refresh token
 const handleRefreshToken = (req, res) => {
