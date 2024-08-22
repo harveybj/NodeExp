@@ -1,15 +1,7 @@
-//User Authorization related logic
-const userDB = {
-  users: require("../model/user.json"),
-  setUsers: function (data) {
-    this.users = data;
-  },
-};
+//User authentication related logic
+const User = require("../model/Users");
 const bcrypt = require("bcrypt");
-const path = require("path");
 const jwt = require("jsonwebtoken");
-const fsPromises = require("fs/promises");
-require("dotenv").config();
 
 const handleLogin = async (req, res) => {
   const { username, password } = req.body;
@@ -18,7 +10,8 @@ const handleLogin = async (req, res) => {
       .status(400)
       .json({ message: "Username and password are required" });
   }
-  const foundUser = userDB.users.find((person) => person.username === username);
+  const foundUser = await User.findOne({ username: username }).exec();
+  //userDB.users.find((person) => person.username === username);
   if (!foundUser) {
     return res.sendStatus(401);
   }
@@ -26,7 +19,6 @@ const handleLogin = async (req, res) => {
   if (match) {
     // create JWTs
     const roles = Object.values(foundUser.roles);
-
     const accessToken = jwt.sign(
       {
         UserInfo: {
@@ -35,29 +27,25 @@ const handleLogin = async (req, res) => {
         },
       },
       process.env.ACCESS_TOKEN_SECRET,
-      { expiresIn: "30s" }
+      { expiresIn: "5m" }
     );
     const refreshToken = jwt.sign(
       { username: foundUser.username },
       process.env.REFRESH_TOKEN_SECRET,
       { expiresIn: "1d" }
     );
-    // Saving refreshToken with current user - Do this in DB later
-    const otherUsers = userDB.users.filter(
-      (person) => person.username !== foundUser.username
-    );
-    const currentUser = { ...foundUser, refreshToken };
-    userDB.setUsers([...otherUsers, currentUser]);
-    await fsPromises.writeFile(
-      path.join(__dirname, "..", "model", "user.json"),
-      JSON.stringify(userDB.users)
-    );
+
+    // Saving refreshToken with current user
+    foundUser.refreshToken = refreshToken;
+    const result = await foundUser.save();
+    console.log(result);
+
+    // Creates Secure Cookie with refresh token
     res.cookie("jwt", refreshToken, {
       httpOnly: true,
       sameSite: "None",
-      secure: true,
       maxAge: 24 * 60 * 60 * 1000,
-    });
+    }); //      secure: true, for production
     // res.json({ accessToken });
     res.json({
       success: `User access token's generated successfully`,

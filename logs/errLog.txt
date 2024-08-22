@@ -10,3 +10,6 @@
 20240819	22:18:39	63094958-0907-49d7-8c56-128a06a85b86	TypeError	Cannot convert undefined or null to object	GET	/refresh	undefined
 20240819	22:19:55	eaa7ae21-1faf-4398-95f5-93db9f2072ec	TypeError	Cannot convert undefined or null to object	GET	/refresh	undefined
 20240820	13:10:34	59a4c718-e625-4637-8189-697f9675234d	TypeError	Cannot read properties of undefined (reading 'map')	POST	/employees	undefined
+20240821	18:04:54	c9687836-3b43-44d0-99b6-fef215047663	ReferenceError	data is not defined	GET	/employees	undefined
+20240821	18:22:33	29291e37-b989-4875-b332-ee98152b7200	ReferenceError	data is not defined	GET	/employees/createNewEmployee	undefined
+20240821	18:22:38	ca15cd9f-ab80-4a07-9cc9-3511e2ebec91	ReferenceError	data is not defined	GET	/employees/createNewEmployee	undefined
